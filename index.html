@@ -22,12 +22,58 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: 40px 40px 80px 40px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #d9c7a8;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 300;
+            padding-bottom: 16px;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #1a1a1a;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #1a1a1a;
+        }
+
+        /* Home Section */
+        .home-section {
+            display: block;
+        }
+
+        .home-section.hidden {
+            display: none;
         }
 
         /* Header */
         .header {
-            margin-bottom: 40px;
+            margin-bottom: 80px;
             display: flex;
             align-items: flex-start;
             gap: 60px;
@@ -115,56 +161,13 @@
             border-bottom-color: #0066cc;
         }
 
-        /* Navigation */
-        .nav {
-            margin-top: 60px;
-            margin-bottom: 60px;
-            border-bottom: 1px solid #e8dcc6;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
-        .nav-link {
-            color: #999;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 300;
-            padding-bottom: 16px;
-            transition: color 0.2s ease;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: #1a1a1a;
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #1a1a1a;
-        }
-
         /* Content Sections */
         .content-section {
             display: none;
         }
 
-        .content-section.active,
-        .home-section {
+        .content-section.active {
             display: block;
-        }
-
-        .home-section.hidden {
-            display: none;
         }
 
         .section-title {
@@ -550,7 +553,8 @@
         <!-- Navigation -->
         <nav class="nav">
             <ul class="nav-list">
-                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#patents" class="nav-link">Patents</a></li>
@@ -558,39 +562,32 @@
             </ul>
         </nav>
 
-        <!-- Header -->
-        <header class="header">
-            <img src="Personal_Photo_Yoni_Eder_No_Background.jpg" alt="Yonathan Eder" class="profile-image" 
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="profile-placeholder" style="display: none;">YE</div>
-            
-            <div class="header-content">
-                <h1 class="name">Yonathan Eder</h1>
-                <p class="title">Ph.D. Candidate in Signal Processing & Radar Systems</p>
-                <p class="bio">
-                    I specialize in contactless physiological sensing using mmWave FMCW radar, bridging theoretical signal processing and model-based AI with practical medical applications. My research advanced radar-based healthcare monitoring from laboratory concepts to clinical implementation.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:yonieder1@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/yoni-eder-659024155/" target="_blank">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?user=qFxTsDMAAAAJ&hl=iw" target="_blank">Google Scholar</a>
+        <!-- Home Section -->
+        <div id="home" class="home-section">
+            <header class="header">
+                <img src="Personal_Photo_Yoni_Eder_No_Background.jpg" alt="Yonathan Eder" class="profile-image" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-placeholder" style="display: none;">YE</div>
+                
+                <div class="header-content">
+                    <div>
+                        <h1 class="name">Yonathan Eder</h1>
+                        <p class="title">Ph.D. Candidate in Signal Processing & Radar Systems</p>
+                        <p class="bio">
+                            I specialize in contactless physiological sensing using mmWave FMCW radar, bridging theoretical signal processing and model-based AI with practical medical applications. My research advanced radar-based healthcare monitoring from laboratory concepts to clinical implementation.
+                        </p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:yonieder1@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/yoni-eder-659024155/" target="_blank">LinkedIn</a>
+                        <a href="https://scholar.google.com/citations?user=qFxTsDMAAAAJ&hl=iw" target="_blank">Google Scholar</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-
-        <!-- Navigation -->
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="#about" class="nav-link active">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#patents" class="nav-link">Patents</a></li>
-                <li><a href="#talks" class="nav-link">Talks</a></li>
-            </ul>
-        </nav>
+            </header>
+        </div>
 
         <!-- About Section -->
-        <section id="about" class="content-section active">
+        <section id="about" class="content-section">
             <h2 class="section-title">About</h2>
             <p class="about-intro">
                 My work focuses on developing next-generation contactless vital signs monitoring systems through multi-person FMCW radar, from fundamental algorithm development to clinical validation in leading hospitals including Sheba, Ichilov, and Schneider Children's Medical Center.
@@ -852,38 +849,3 @@
                     <div class="talk-links">
                         <a href="#" target="_blank">Slides</a>
                     </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        // Navigation functionality
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all nav links
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                
-                // Add active class to clicked nav link
-                this.classList.add('active');
-                
-                // Get target section
-                const targetId = this.getAttribute('href').substring(1);
-                
-                if (targetId === 'home') {
-                    // Show home section, hide all content sections
-                    document.getElementById('home').classList.remove('hidden');
-                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-                } else {
-                    // Hide home section, show target content section
-                    document.getElementById('home').classList.add('hidden');
-                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-                    document.getElementById(targetId).classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
