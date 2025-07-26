@@ -13,291 +13,274 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #000000;
-            color: #ffffff;
             line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
             font-size: 16px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 60px 30px;
+            padding: 80px 40px;
         }
 
-        /* Home Section */
-        .home-section {
-            min-height: 100vh;
+        /* Header */
+        .header {
+            margin-bottom: 80px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            gap: 60px;
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
             object-fit: cover;
-            margin-bottom: 30px;
-            border: 2px solid #333;
+            flex-shrink: 0;
+            background: #f5f5f5;
         }
 
         .profile-placeholder {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #111;
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
-            color: #666;
+            color: #999;
             font-weight: 300;
-            margin-bottom: 30px;
-            border: 2px solid #333;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
+            padding-top: 20px;
         }
 
         .name {
             font-size: 48px;
             font-weight: 300;
-            margin-bottom: 20px;
             letter-spacing: -1px;
-        }
-
-        .tagline {
-            font-size: 20px;
-            color: #ccc;
-            margin-bottom: 40px;
-            font-weight: 300;
-            max-width: 600px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-            width: 100%;
-        }
-
-        .contact-item {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px;
-            border: 1px solid #333;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .contact-item:hover {
-            border-color: #ff6b35;
-            background: rgba(255, 107, 53, 0.1);
-        }
-
-        .quick-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-            width: 100%;
-        }
-
-        .info-section h3 {
-            color: #ff6b35;
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        .info-section ul {
-            list-style: none;
-        }
-
-        .info-section li {
-            color: #ccc;
             margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .title {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .bio {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 32px;
             font-weight: 300;
         }
 
-        .nav-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 600px;
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
-        .nav-button {
-            background: transparent;
-            color: #fff;
-            border: 1px solid #333;
-            padding: 15px 25px;
-            border-radius: 8px;
+        .contact-links a {
+            color: #666;
             text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
+            font-size: 16px;
             font-weight: 300;
-            cursor: pointer;
+            transition: color 0.2s ease;
         }
 
-        .nav-button:hover {
-            border-color: #ff6b35;
-            background: rgba(255, 107, 53, 0.1);
-            color: #ff6b35;
+        .contact-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 300;
+            padding-bottom: 16px;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #1a1a1a;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #1a1a1a;
         }
 
         /* Content Sections */
         .content-section {
             display: none;
-            padding: 40px 0;
         }
 
         .content-section.active {
             display: block;
         }
 
-        .back-button {
-            background: transparent;
-            color: #ff6b35;
-            border: 1px solid #ff6b35;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-bottom: 40px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 300;
-        }
-
-        .back-button:hover {
-            background: #ff6b35;
-            color: #000;
-        }
-
         .section-title {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 300;
-            margin-bottom: 30px;
-            color: #fff;
-        }
-
-        .section-subtitle {
-            color: #ff6b35;
-            font-size: 18px;
-            margin-bottom: 20px;
-            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
         }
 
         /* About Section */
-        .about-content {
+        .about-intro {
             font-size: 18px;
             line-height: 1.7;
-            color: #ccc;
-            margin-bottom: 40px;
+            color: #333;
+            margin-bottom: 50px;
             font-weight: 300;
         }
 
         .research-areas {
             display: grid;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
         }
 
-        .research-item {
-            border-left: 3px solid #ff6b35;
-            padding-left: 20px;
-            margin-bottom: 30px;
+        .research-area {
+            padding-bottom: 40px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .research-item h4 {
-            color: #fff;
+        .research-area:last-child {
+            border-bottom: none;
+        }
+
+        .research-area h3 {
             font-size: 20px;
-            margin-bottom: 10px;
             font-weight: 400;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
 
-        .research-item p {
-            color: #ccc;
+        .research-area p {
+            color: #666;
+            line-height: 1.6;
             font-weight: 300;
         }
 
-        /* Projects Section */
+        /* Projects */
         .projects-grid {
             display: grid;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 60px;
         }
 
         .project {
-            border: 1px solid #333;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .project:hover {
-            border-color: #ff6b35;
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
         }
 
         .project-image {
             width: 100%;
             height: 200px;
+            border-radius: 8px;
             object-fit: cover;
-            background: #111;
+            background: #f8f8f8;
         }
 
         .project-image-placeholder {
             width: 100%;
             height: 200px;
-            background: #111;
+            border-radius: 8px;
+            background: #f8f8f8;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
-            color: #333;
-        }
-
-        .project-content {
-            padding: 25px;
+            font-size: 24px;
+            color: #ccc;
         }
 
         .project-content h3 {
-            color: #fff;
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 24px;
             font-weight: 400;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
 
         .project-content p {
-            color: #ccc;
-            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
             font-weight: 300;
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
         }
 
         .project-link {
-            color: #ff6b35;
+            color: #1a1a1a;
             text-decoration: none;
             font-size: 14px;
             font-weight: 400;
-            border: 1px solid #ff6b35;
             padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
 
         .project-link:hover {
-            background: #ff6b35;
-            color: #000;
+            background: #f5f5f5;
+        }
+
+        .project-link.paper {
+            background: #f0f9ff;
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+
+        .project-link.paper:hover {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        .project-link.talk {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        .project-link.talk:hover {
+            background: #22c55e;
+            color: white;
         }
 
         .project-tags {
@@ -307,118 +290,174 @@
         }
 
         .tag {
-            background: #222;
-            color: #ccc;
+            background: #f5f5f5;
+            color: #666;
             padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
+            border-radius: 16px;
+            font-size: 13px;
             font-weight: 300;
         }
 
-        /* Publications Section */
+        /* Publications */
         .publications-list {
             display: grid;
-            gap: 30px;
-            margin-top: 30px;
+            gap: 32px;
         }
 
         .publication {
-            border-left: 3px solid #333;
-            padding-left: 20px;
-            padding-bottom: 25px;
-            transition: all 0.3s ease;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .publication:hover {
-            border-left-color: #ff6b35;
+        .publication:last-child {
+            border-bottom: none;
         }
 
         .publication-type {
-            color: #ff6b35;
-            font-size: 12px;
+            color: #999;
+            font-size: 13px;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
         }
 
         .publication-title {
-            color: #fff;
             font-size: 18px;
             font-weight: 400;
             margin-bottom: 8px;
+            color: #1a1a1a;
             line-height: 1.4;
         }
 
         .publication-authors {
-            color: #999;
-            font-size: 14px;
-            margin-bottom: 5px;
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 4px;
             font-weight: 300;
         }
 
         .publication-venue {
-            color: #666;
+            color: #999;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 300;
         }
 
         .publication-links {
             display: flex;
-            gap: 15px;
+            gap: 16px;
         }
 
         .publication-links a {
-            color: #ff6b35;
+            color: #1a1a1a;
             text-decoration: none;
             font-size: 14px;
             font-weight: 400;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .publication-links a:hover {
-            color: #fff;
+            color: #666;
         }
 
-        /* Patents Section */
+        /* Patents */
         .patents-list {
             display: grid;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 32px;
         }
 
         .patent {
-            background: #111;
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid #222;
-            transition: all 0.3s ease;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .patent:hover {
-            border-color: #ff6b35;
-            background: rgba(255, 107, 53, 0.05);
+        .patent:last-child {
+            border-bottom: none;
         }
 
         .patent-title {
-            color: #fff;
             font-size: 18px;
             font-weight: 400;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            line-height: 1.4;
         }
 
         .patent-authors {
-            color: #999;
-            font-size: 14px;
-            margin-bottom: 5px;
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 4px;
             font-weight: 300;
         }
 
         .patent-status {
-            color: #ff6b35;
+            color: #999;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        /* Talks */
+        .talks-list {
+            display: grid;
+            gap: 32px;
+        }
+
+        .talk {
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .talk:last-child {
+            border-bottom: none;
+        }
+
+        .talk-type {
+            color: #999;
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .talk-title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .talk-event {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 4px;
+            font-weight: 300;
+        }
+
+        .talk-date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .talk-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .talk-links a {
+            color: #1a1a1a;
+            text-decoration: none;
             font-size: 14px;
             font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .talk-links a:hover {
+            color: #666;
         }
 
         /* Responsive */
@@ -427,109 +466,122 @@
                 padding: 40px 20px;
             }
 
+            .header {
+                flex-direction: column;
+                gap: 32px;
+                margin-bottom: 60px;
+            }
+
+            .profile-image,
+            .profile-placeholder {
+                width: 150px;
+                height: 150px;
+                align-self: center;
+            }
+
+            .header-content {
+                padding-top: 0;
+                text-align: center;
+            }
+
             .name {
                 font-size: 36px;
             }
 
-            .tagline {
-                font-size: 18px;
+            .nav-list {
+                gap: 20px;
+                flex-wrap: wrap;
             }
 
-            .contact-grid,
-            .quick-info,
-            .nav-buttons {
+            .project {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
 
-            .section-title {
-                font-size: 28px;
+            .contact-links {
+                justify-content: center;
             }
 
             .project-links {
                 flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 28px;
+            }
+
+            .bio {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Home Section -->
-        <section id="home" class="home-section content-section active">
+        <!-- Header -->
+        <header class="header">
             <img src="Personal_Photo_Yoni_Eder_No_Background.jpg" alt="Yonathan Eder" class="profile-image" 
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="profile-placeholder" style="display: none;">YE</div>
             
-            <h1 class="name">Yonathan Eder</h1>
-            <p class="tagline">
-                Advancing contactless healthcare through FMCW radar and AI, bridging signal processing theory with clinical practice
-            </p>
-
-            <div class="contact-grid">
-                <a href="mailto:yonieder1@gmail.com" class="contact-item">Email</a>
-                <a href="https://www.linkedin.com/in/yoni-eder-659024155/" target="_blank" class="contact-item">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=qFxTsDMAAAAJ&hl=iw" target="_blank" class="contact-item">Google Scholar</a>
-                <a href="YonathanEder_CV.pdf" target="_blank" download class="contact-item">Download CV</a>
-            </div>
-
-            <div class="quick-info">
-                <div class="info-section">
-                    <h3>Education</h3>
-                    <ul>
-                        <li>Ph.D. Mathematics & Computer Science</li>
-                        <li>Weizmann Institute of Science</li>
-                        <li>SAMPL Lab (2021-2025)</li>
-                        <li>M.Sc. Electrical Engineering, BGU</li>
-                    </ul>
-                </div>
-                <div class="info-section">
-                    <h3>Research Interests</h3>
-                    <ul>
-                        <li>FMCW Radar Signal Processing</li>
-                        <li>Contactless Vital Signs Monitoring</li>
-                        <li>AI for Radar Systems</li>
-                        <li>Clinical Translation</li>
-                    </ul>
+            <div class="header-content">
+                <h1 class="name">Yonathan Eder</h1>
+                <p class="title">Ph.D. Candidate in Signal Processing & Radar Systems</p>
+                <p class="bio">
+                    I specialize in contactless physiological sensing using FMCW radar, bridging theoretical signal processing with practical medical applications. My research advances radar-based healthcare monitoring from laboratory concepts to clinical implementation.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:yonieder1@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/yoni-eder-659024155/" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=qFxTsDMAAAAJ&hl=iw" target="_blank">Google Scholar</a>
+                    <a href="YonathanEder_CV.pdf" target="_blank" download>CV</a>
                 </div>
             </div>
+        </header>
 
-            <div class="nav-buttons">
-                <a href="#about" class="nav-button">About</a>
-                <a href="#projects" class="nav-button">Projects</a>
-                <a href="#publications" class="nav-button">Publications</a>
-                <a href="#patents" class="nav-button">Patents</a>
-            </div>
-        </section>
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#patents" class="nav-link">Patents</a></li>
+                <li><a href="#talks" class="nav-link">Talks</a></li>
+            </ul>
+        </nav>
 
         <!-- About Section -->
-        <section id="about" class="content-section">
-            <a href="#home" class="back-button">← Back</a>
+        <section id="about" class="content-section active">
             <h2 class="section-title">About</h2>
+            <p class="about-intro">
+                My work focuses on developing next-generation contactless vital signs monitoring systems through multi-person FMCW radar, from fundamental algorithm development to clinical validation in leading hospitals including Sheba, Ichilov, and Schneider Children's Medical Center.
+            </p>
             
-            <div class="about-content">
-                <p>I am a Ph.D. candidate at the Weizmann Institute of Science, specializing in contactless physiological sensing using FMCW radar. My research bridges the gap between theoretical signal processing and practical medical applications, developing innovative radar-based solutions for healthcare monitoring.</p>
-                
-                <p>My work focuses on advancing next-generation contactless vital signs monitoring systems through multi-person FMCW radar, from fundamental algorithm development to clinical validation in leading hospitals including Sheba, Ichilov, and Schneider Children's Medical Center.</p>
-            </div>
-
-            <h3 class="section-subtitle">Research Areas</h3>
             <div class="research-areas">
-                <div class="research-item">
-                    <h4>Signal Processing</h4>
+                <div class="research-area">
+                    <h3>Signal Processing</h3>
                     <p>Advanced DSP techniques for FMCW radar, including sparse signal processing, multi-target detection, and robust statistical methods for physiological signal extraction.</p>
                 </div>
                 
-                <div class="research-item">
-                    <h4>AI & Deep Learning</h4>
+                <div class="research-area">
+                    <h3>AI & Deep Learning</h3>
                     <p>Developing neural networks for radar signal processing, including RaLU-Net for precise human localization and AI-based vital signs monitoring algorithms.</p>
                 </div>
                 
-                <div class="research-item">
-                    <h4>Radar Systems</h4>
+                <div class="research-area">
+                    <h3>Radar Systems</h3>
                     <p>Expertise in SISO, SIMO, and MIMO FMCW radar configurations for healthcare applications, from 24 GHz to 81 GHz frequency ranges.</p>
                 </div>
                 
-                <div class="research-item">
-                    <h4>Clinical Translation</h4>
+                <div class="research-area">
+                    <h3>Clinical Translation</h3>
                     <p>Translating radar research into practical medical devices through collaborations with major hospitals and clinical validation studies.</p>
                 </div>
             </div>
@@ -537,7 +589,6 @@
 
         <!-- Projects Section -->
         <section id="projects" class="content-section">
-            <a href="#home" class="back-button">← Back</a>
             <h2 class="section-title">Projects</h2>
             
             <div class="projects-grid">
@@ -547,7 +598,8 @@
                         <h3>Multi-Person Vital Signs Monitoring</h3>
                         <p>Comprehensive framework for simultaneous monitoring of multiple patients using advanced MIMO radar configurations. Enables robust vital signs extraction in challenging clinical environments with patient movement and interference.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">Research Paper</a>
+                            <a href="#" class="project-link paper">IEEE Paper</a>
+                            <a href="#" class="project-link talk">ICASSP Talk</a>
                             <a href="#" class="project-link">Clinical Demo</a>
                         </div>
                         <div class="project-tags">
@@ -564,7 +616,8 @@
                         <h3>RaLU-Net: Deep Learning for Radar</h3>
                         <p>Novel deep unfolded neural network architecture for precise human localization using radar signals. Achieves sub-centimeter accuracy in human positioning, enabling highly accurate vital signs monitoring.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">ICASSP 2025</a>
+                            <a href="#" class="project-link paper">ICASSP 2025 Paper</a>
+                            <a href="#" class="project-link talk">Conference Presentation</a>
                             <a href="#" class="project-link">Code Repository</a>
                         </div>
                         <div class="project-tags">
@@ -581,7 +634,8 @@
                         <h3>Nanoparticle Monitoring</h3>
                         <p>Pioneered the use of mmWave radar for quantitative monitoring of iron oxide nanoparticles in biological tissues, opening new possibilities for non-invasive medical imaging and drug delivery tracking.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">IEEE Paper</a>
+                            <a href="#" class="project-link paper">IEEE ICASSP Paper</a>
+                            <a href="#" class="project-link talk">Workshop Presentation</a>
                             <a href="#" class="project-link">Technical Details</a>
                         </div>
                         <div class="project-tags">
@@ -598,7 +652,8 @@
                         <h3>Hospital Collaboration Initiative</h3>
                         <p>Leading multi-site clinical validation studies across three major Israeli hospitals to translate radar-based vital signs monitoring from laboratory to clinical practice.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link">Clinical Results</a>
+                            <a href="#" class="project-link paper">Clinical Results Paper</a>
+                            <a href="#" class="project-link talk">Medical Conference Talk</a>
                             <a href="#" class="project-link">Partnership Info</a>
                         </div>
                         <div class="project-tags">
@@ -613,10 +668,8 @@
 
         <!-- Publications Section -->
         <section id="publications" class="content-section">
-            <a href="#home" class="back-button">← Back</a>
             <h2 class="section-title">Publications</h2>
             
-            <h3 class="section-subtitle">Journal Articles</h3>
             <div class="publications-list">
                 <div class="publication">
                     <div class="publication-type">Journal 2025</div>
@@ -650,10 +703,7 @@
                         <a href="#" target="_blank">PDF</a>
                     </div>
                 </div>
-            </div>
 
-            <h3 class="section-subtitle">Conference Proceedings</h3>
-            <div class="publications-list">
                 <div class="publication">
                     <div class="publication-type">Conference 2025</div>
                     <h3 class="publication-title">RaLU-Net: Deep Unfolded Radar Localization of Humans for Precise Non-Contact Vital Signs Monitoring</h3>
@@ -691,7 +741,6 @@
 
         <!-- Patents Section -->
         <section id="patents" class="content-section">
-            <a href="#home" class="back-button">← Back</a>
             <h2 class="section-title">Patents</h2>
             
             <div class="patents-list">
@@ -714,29 +763,84 @@
                 </div>
             </div>
         </section>
+
+        <!-- Talks Section -->
+        <section id="talks" class="content-section">
+            <h2 class="section-title">Talks</h2>
+            
+            <div class="talks-list">
+                <div class="talk">
+                    <div class="talk-type">Conference Presentation</div>
+                    <h3 class="talk-title">RaLU-Net: Deep Unfolded Radar Localization of Humans for Precise Non-Contact Vital Signs Monitoring</h3>
+                    <div class="talk-event">IEEE ICASSP 2025</div>
+                    <div class="talk-date">April 2025</div>
+                    <div class="talk-links">
+                        <a href="#" target="_blank">Slides</a>
+                        <a href="#" target="_blank">Video</a>
+                    </div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-type">Conference Presentation</div>
+                    <h3 class="talk-title">Localization and Tracking of Gold Nanoparticles Using mmWave FMCW Radar</h3>
+                    <div class="talk-event">IEEE ICASSP 2024</div>
+                    <div class="talk-date">April 2024</div>
+                    <div class="talk-links">
+                        <a href="#" target="_blank">Slides</a>
+                        <a href="#" target="_blank">Video</a>
+                    </div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-type">Conference Presentation</div>
+                    <h3 class="talk-title">Sparse Non-Contact Multiple People Localization and Vital Signs Monitoring Via FMCW Radar</h3>
+                    <div class="talk-event">IEEE ICASSP 2023</div>
+                    <div class="talk-date">June 2023</div>
+                    <div class="talk-links">
+                        <a href="#" target="_blank">Slides</a>
+                        <a href="#" target="_blank">Video</a>
+                    </div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-type">Workshop</div>
+                    <h3 class="talk-title">Translational AI and Engineering in Health and Communication</h3>
+                    <div class="talk-event">Weizmann Institute of Science Workshop</div>
+                    <div class="talk-date">2023</div>
+                    <div class="talk-links">
+                        <a href="#" target="_blank">Slides</a>
+                    </div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-type">Seminar</div>
+                    <h3 class="talk-title">Unsupervised Machine Learning Applications in Signal Processing</h3>
+                    <div class="talk-event">6th Annual Unsupervised Machine Learning Seminar, Afeka Tel-Aviv Academic College</div>
+                    <div class="talk-date">2020</div>
+                    <div class="talk-links">
+                        <a href="#" target="_blank">Slides</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
         // Navigation functionality
-        document.querySelectorAll('.nav-button, .back-button').forEach(button => {
-            button.addEventListener('click', function(e) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                // Hide all sections
-                document.querySelectorAll('.content-section').forEach(section => {
-                    section.classList.remove('active');
-                });
+                // Remove active class from all nav links and sections
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
                 
-                // Show target section
+                // Add active class to clicked nav link
+                this.classList.add('active');
+                
+                // Show corresponding section
                 const targetId = this.getAttribute('href').substring(1);
                 document.getElementById(targetId).classList.add('active');
-            });
-        });
-
-        // Smooth scroll to top when changing sections
-        document.querySelectorAll('.nav-button, .back-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
