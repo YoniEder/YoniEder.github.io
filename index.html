@@ -548,6 +548,34 @@
         }
     </style>
 </head>
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll(".content-section, .home-section");
+
+        function showSection(id) {
+            sections.forEach(section => {
+                section.style.display = (section.id === id) ? "block" : "none";
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                const targetId = this.getAttribute("href").substring(1); // Remove "#"
+                showSection(targetId);
+            });
+        });
+
+        // Show section based on current hash, or default to home
+        const initialHash = window.location.hash.replace("#", "") || "home";
+        showSection(initialHash);
+    });
+    </script>
 <body>
     <div class="container">
         <!-- Navigation -->
